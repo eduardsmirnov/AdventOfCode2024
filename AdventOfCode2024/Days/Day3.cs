@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2024.Days;
 
+// https://adventofcode.com/2024/day/3
 public class Day3: IDay {
 	public async Task RunAsync(int iteration) {
 		var directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

@@ -2,6 +2,7 @@
 
 namespace AdventOfCode2024.Days;
 
+// https://adventofcode.com/2024/day/2
 public class Day2 : IDay {
 	public async Task RunAsync(int iteration) {
 		var directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

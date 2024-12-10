@@ -67,6 +67,67 @@ public class Grid {
 		return sum;
 	}
 
+	public Cell? Cell(int row, int col) {
+		if (row >= _rows || row < 0) { return null; }
+		if (col >= _cols || col < 0) { return null; }
+
+		return _matrix[row, col];
+	}
+
+	public Cell? NextCell(Cell cell) {
+		var nextRow = cell.Row;
+
+		var nextCol = cell.Col + 1;
+		if (nextCol >= _cols) {
+			nextCol = 0;
+			nextRow++;
+		}
+
+		if (nextRow >= _rows) { return null; }		
+
+		return _matrix[nextRow, nextCol];
+	}
+
+	public Cell? UpCell(Cell cell) {
+		var nextRow = cell.Row - 1;
+		var nextCol = cell.Col;
+
+		if (nextRow >= _rows || nextRow < 0) { return null; }
+		if (nextCol >= _cols || nextCol < 0) { return null; }
+
+		return _matrix[nextRow, nextCol];
+	}
+
+	public Cell? DownCell(Cell cell) {
+		var nextRow = cell.Row + 1;
+		var nextCol = cell.Col;
+
+		if (nextRow >= _rows || nextRow < 0) { return null; }
+		if (nextCol >= _cols || nextCol < 0) { return null; }
+
+		return _matrix[nextRow, nextCol];
+	}
+
+	public Cell? LeftCell(Cell cell) {
+		var nextRow = cell.Row;
+		var nextCol = cell.Col - 1;
+
+		if (nextRow >= _rows || nextRow < 0) { return null; }
+		if (nextCol >= _cols || nextCol < 0) { return null; }
+
+		return _matrix[nextRow, nextCol];
+	}
+
+	public Cell? RightCell(Cell cell) {
+		var nextRow = cell.Row;
+		var nextCol = cell.Col + 1;
+
+		if (nextRow >= _rows || nextRow < 0) { return null; }
+		if (nextCol >= _cols || nextCol < 0) { return null; }
+
+		return _matrix[nextRow, nextCol];
+	}
+
 	public int BuildPath(int? maxIterations = null) {
 		var iterations = 0;
 

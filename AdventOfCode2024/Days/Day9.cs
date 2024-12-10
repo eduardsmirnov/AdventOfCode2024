@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2024.Days;
 
-// https://adventofcode.com/2024/day/8
+// https://adventofcode.com/2024/day/9
 public class Day9: IDay {
 	private List<int?> _data = new List<int?>();
 	private List<int> _emptyPlaces = new List<int>();

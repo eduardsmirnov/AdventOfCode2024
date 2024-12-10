@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2024;
 
-var day = 5;
+var day = 9;
 var iteration = 2;
 
 if (args.Length > 0) {
@@ -14,7 +14,7 @@ if (args.Length > 1) {
 Console.WriteLine("==========================================");
 Console.WriteLine("ADVENT OF CODE 2024");
 Console.WriteLine($"Day: {day}");
-Console.WriteLine($"Iteraion: {iteration}");
+Console.WriteLine($"Iteration: {iteration}");
 Console.WriteLine("==========================================");
 
 await DayFactory.CreateInstance(day).RunAsync(iteration);

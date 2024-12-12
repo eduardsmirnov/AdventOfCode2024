@@ -10,6 +10,19 @@ public class Cell {
 	public bool IsObstacle { get; set; }
 	public bool IsRotation { get; set; }
 	public bool IsExtraObstacle { get; set; }
+
+	public bool IsNeighbourOf(Cell cell) {
+		if (cell == null) return false;
+
+		return (Row == cell.Row && Col == cell.Col + 1) ||
+				(Row == cell.Row && Col == cell.Col - 1) ||
+				(Row == cell.Row + 1 && Col == cell.Col) ||
+				(Row == cell.Row - 1 && Col == cell.Col);
+				//(Row == cell.Row - 1 && Col == cell.Col - 1) ||
+				//(Row == cell.Row - 1 && Col == cell.Col + 1) ||
+				//(Row == cell.Row + 1 && Col == cell.Col - 1) ||
+				//(Row == cell.Row + 1 && Col == cell.Col + 1);
+	}
 }
 
 public class Grid {
@@ -65,6 +78,18 @@ public class Grid {
 		}
 
 		return sum;
+	}
+
+	public List<Cell> All() {
+		var list = new List<Cell>();
+
+		for (var row = 0; row < _rows; row++) {
+			for (var col = 0; col < _cols; col++) {
+				list.Add(_matrix[row, col]);
+			}
+		}
+
+		return list; ;
 	}
 
 	public Cell? Cell(int row, int col) {

@@ -69,6 +69,20 @@ public class Grid {
 		}
 	}
 
+	public Grid(int rows, int cols) {
+		_rows = rows;
+		_cols = cols;
+
+		_matrix = new Cell[_rows, _cols];
+
+		for (var row = 0; row < _rows; row++) {
+			for (var col = 0; col < _cols; col++) {
+				var cell = new Cell { Row = row, Col = col, Value = '.' };
+				_matrix[row, col] = cell;
+			}
+		}
+	}
+
 	public int VisitedCells() {
 		var sum = 0;
 		for (var row = 0; row < _rows; row++) {

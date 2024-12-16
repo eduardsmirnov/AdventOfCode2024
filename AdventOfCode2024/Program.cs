@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2024;
 
-var day = 13;
+var day = 14;
 var iteration = 2;
 
 if (args.Length > 0) {
